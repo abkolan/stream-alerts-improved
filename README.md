@@ -12,7 +12,7 @@ Set off an alert, when a word occurs for more than X number of times in a slidin
 
 ### Approach
 
-![](https://github.com/abkolan/stream-alerts/blob/master/media/image.png?raw=true)
+![](https://github.com/abkolan/stream-alerts-improved/blob/master/media/image.png?raw=true)
 
 #### Part 1 (of 2) - Storing the values in an array 
 Let the number of seconds in the interval `M` be `n`. We will maintain an array, `A` of size `n+1` against every word in a KV map. This array would be used to store the occurences of the word. To maintain the sliding window, we would use the array in a circular fashion. This would ensure that only values that are valid for a particular window would remain in the array. To ensure that the values of the current sliding window is maintained, we also store the lastupdated timestamp in the array. Using this we would be able to infer the current state of the values in array. Explained in detail below. 
