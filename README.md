@@ -31,7 +31,7 @@ We use a Segment Tree for the three operations, as all the three operations abov
 A simple simulation (single instance of a sliding window) of both the concepts can be found [here](https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4).
 
 
-#### Part 1 - Details
+#### Part 1 - Storing the values in an array - Details
 This is easier to explain this with an example. Consider an interval of 5 seconds, i.e `n=5`. To maintain a sliding window an array of size `n+1` is created. In our case an array of size `6`. 
 
 
@@ -129,8 +129,6 @@ Event |E1 |E2 |R  |R  |E4 |-- |
 
 A simulation of this can be found in a gist [here](https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4).
 
-<a href="https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4" target="_blank">here</a>
-
 ### Building and Running
 **Prerequisites**
  
@@ -159,18 +157,14 @@ java -jar target/stream-alert-0.0.1-jar-with-dependencies.jar <NUM-OCCURRENCES> 
   `./gen-tweets.sh | java -jar target/stream-alert-0.0.1-jar-with-dependencies.jar 10000 1 true`
   
   Excerpt of the output
-  ```
-   ALERT
-   back
-   ALERT
-   love
-   ALERT
-   good
-   ALERT
-   time
-   ALERT
-  going
-```
+  
+ ```
+ ALERT generated for word = oh
+ ALERT generated for word = nice
+ ALERT generated for word = that's
+ ALERT generated for word = know
+ ALERT generated for word = getting
+ ```
 
   The above example would print out alerts when a non-stopword word occurrences is equal to or greater than 10000 for a sliding period of 1 minute, from the simulated tweets The counts are accurate upto a second.
 
