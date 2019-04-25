@@ -57,6 +57,7 @@ Event |E1 |E2 |E3 |E4 |E5 |-  |
 
 The sum of all the values occurred in a window can be computed by `Sum(A[0:4])`. In the above case the sum is `5`. 
 
+---
 Consider an extension of the above case, where an Event 6 occurs at `05`.
 
 |Event Id| Timestamp    | Value | 
@@ -74,6 +75,8 @@ Bucket|0  |1  |  2|  3|  4|  5|
 ------|---|---|---|---|---|---|
 Value |1  |1  |1  |1  |1  |-  |
 Event |E6 |E2 |E3 |E4 |E5 |-  |
+
+---
 
 To accurately maintain these values in all the cases, we would also need the timestamp of last seen event. This is stored in the last index of the array. 
 
@@ -99,6 +102,8 @@ Bucket|0  |1  |  2|  3|  4|  5|
 Value |0  |0  |0  |0  |0  |01 |
 Event |-- |-- |E3 |-- |-- |-- |
 
+---
+
 This leaves us with one pending usecase, when the events are not sequential. 
 Consider these sample events.
 
@@ -123,6 +128,8 @@ Value |1  |1  |0  |0  |1  |04 |
 Event |E1 |E2 |R  |R  |E4 |-- |
 
 A simulation of this can be found in a gist [here](https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4).
+
+<a href="https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4" target="_blank">here</a>
 
 ### Building and Running
 **Prerequisites**
