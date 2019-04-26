@@ -11,8 +11,8 @@ import java.util.concurrent.ExecutionException;
 
 public class Main {
 
-  private static int ALERT_NUM_OCCURRENCES = 5;
-  private static int TIME_INTERVAL_MINUTES = 1;
+  private static int ALERT_NUM_OCCURRENCES = 5000000;
+  private static int TIME_INTERVAL_MINUTES = 5;
 
   private final static int INTERVAL = TIME_INTERVAL_MINUTES * 60;
 
