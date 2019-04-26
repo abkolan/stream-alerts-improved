@@ -56,7 +56,7 @@ public class Main {
 
   //A Test driver
   private static void driver() throws ExecutionException, InterruptedException {
-    /*System.out.println("Test mode");
+    System.out.println("Test mode");
     ALERT_NUM_OCCURRENCES = 5;
     TIME_INTERVAL_MINUTES = 1;
     System.out.println("Sending Mock Data");
@@ -70,18 +70,18 @@ public class Main {
     Thread.sleep(500);
     process("When you ache with a sadness that doesn’t seem to have a source", System.currentTimeMillis());
     process("when you feel a hunger you’ve never known before", System.currentTimeMillis());
-    Thread.sleep(10000);*/
+    Thread.sleep(1000);
 
     //Test case for within in window
-    process("this",System.currentTimeMillis());
+    process("qxzy",System.currentTimeMillis());
     Thread.sleep(1000);
-    process("this",System.currentTimeMillis());
+    process("qxzy",System.currentTimeMillis());
     Thread.sleep(1000);
-    process("this",System.currentTimeMillis());
+    process("qxzy",System.currentTimeMillis());
     Thread.sleep(1000);
-    process("this",System.currentTimeMillis());
+    process("qxzy",System.currentTimeMillis());
     Thread.sleep(56 * 1000);
-    process("this",System.currentTimeMillis());
+    process("qxzy",System.currentTimeMillis());
     System.out.println("DONE");
     Thread.sleep(5 * 1000);
   }
