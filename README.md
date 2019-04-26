@@ -88,7 +88,7 @@ Consider these events.
 |E2      | 01           | 1     |      
 |E3      | 07           | 1     |   
 
-At the end of processig of Event `E2`. The array `A` would look like. The last index `5` containing the value of the timestamp of `E2`. 
+At the end of processing of Event `E2`. The array `A` would look like. The last index `5` containing the value of the timestamp of `E2`. 
 
 Bucket|0  |1  |  2|  3|  4|  5|
 ------|---|---|---|---|---|---|
