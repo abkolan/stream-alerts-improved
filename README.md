@@ -120,7 +120,7 @@ Bucket|0  |1  |  2|  3|  4|  5|
 Value |1  |1  |0  |0  |0  |01 |
 Event |E1 |E2 |-- |-- |-- |-- |
 
-When the event `E3` is processed, since the last updated timestamp is 01, and the current timestamp is 04. We would have to ensure that the buckets bodering that rage i.e 3-4 are reset to indicate that there were no events generated during that time. Indicated by `R`. 
+When the event `E3` is processed, since the last updated timestamp is 01, and the current timestamp is 04. We would have to ensure that the buckets bordering that rage i.e 3-4 are reset to indicate that there were no events generated during that time. Indicated by `R`. 
 
 Bucket|0  |1  |  2|  3|  4|  5|
 ------|---|---|---|---|---|---|
