@@ -28,7 +28,7 @@ We would be doing 3 operations on the array.
 We use a Segment Tree for the three operations, as all the three operations above can be done in O(log n) time. Get sum in our case is in the complete range it would be in O(1) time, as we have done all the heavy lifting during the updates.
 
 #### Simple simulation of single sliding window using both concepts
-A simple simulation (single instance of a sliding window) of both the concepts can be found [here](https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4).
+A simple simulation (single instance of a sliding window of 10s) of both the concepts can be found [here](https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4).
 
 
 #### Part 1 - Storing the values in an array - Details
@@ -127,7 +127,7 @@ Bucket|  0  |  1  |  2  |  3  |  4  |  5  |
 Value |1    |1    |0    |0    |1    |  04 |
 Event |E1   |E2   |R    |R    |E4   |  -- |
 
-A simulation of this can be found in a gist [here](https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4).
+A simulation of a single instance of a sliding window of 10s can be found in this gist [here](https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4).
 
 ### Further Improvements
 * The map can be garbage collected if the last updated time is passed the interval. 
