@@ -50,10 +50,10 @@ In the simplest case, the events occur in succession. Consider 5 such events, th
 `A` is populated by modding the **Timestamp** by the interval to determine the index or the bucket, where the value is set. (Ignore the last index, we will cover that later)  
 Event E1, generated at timestamp `00` would go to the bucket `0`, Event E2 generated at the timestamp `01` would go the bucket `1` and so on. And, for this simple case the array `A` would look like this. 
 
-Bucket|0  |1  |  2|  3|  4|  5|
-------|---|---|---|---|---|---|
-Value |1  |1  |1  |1  |1  |-  |
-Event |E1 |E2 |E3 |E4 |E5 |-  |
+Bucket|  0  |  1  |  2  |  3  |  4  |  5  |
+:----:|:---:|:---:|:---:|:---:|:---:|:---:|
+Value |1    |  1  | 1   |  1  |  1  |  -  |
+Event |  E1 |E2   |E3   |E4   |  E5 |  -  |
 
 The sum of all the values occurred in a window can be computed by `Sum(A[0:4])`. In the above case the sum is `5`. 
 
@@ -71,8 +71,8 @@ Consider an extension of the above case, where an Event 6 occurs at `05`.
 
 Since we are only concerned about the events that happened in last 5 seconds, we can overwrite value at bucket `0`. And, sum would give us the value of the sum in the sliding window of 5 seconds, that is from event E2 to E6. The array `A` would like this. 
 
-Bucket|0  |1  |  2|  3|  4|  5|
-------|---|---|---|---|---|---|
+Bucket|  0  |  1  |  2  |  3  |  4  |  5  |
+:----:|:---:|:---:|:---:|:---:|:---:|:---:|
 Value |1  |1  |1  |1  |1  |-  |
 Event |E6 |E2 |E3 |E4 |E5 |-  |
 
@@ -90,17 +90,17 @@ Consider these events.
 
 At the end of processing of Event `E2`. The array `A` would look like. The last index `5` containing the value of the timestamp of `E2`. 
 
-Bucket|0  |1  |  2|  3|  4|  5|
-------|---|---|---|---|---|---|
+Bucket|  0  |  1  |  2  |  3  |  4  |  5  |
+:----:|:---:|:---:|:---:|:---:|:---:|:---:|
 Value |1  |1  |0  |0  |0  |01 |
 Event |E1 |E2 |-- |-- |-- |-- |
 
 When Event `E3` is processed, we check for the lastupdated timestamp. If difference between the current timestamp and the lastupdated timestamp is greater than the interval. We reset, all the buckets to zero and then update the current bucket. At the end of processing of `E3`. The array `A` would look like. 
 
-Bucket|0  |1  |  2|  3|  4|  5|
-------|---|---|---|---|---|---|
-Value |0  |0  |0  |0  |0  |01 |
-Event |-- |-- |E3 |-- |-- |-- |
+Bucket|  0  |  1  |  2  |  3  |  4  |  5  |
+:----:|:---:|:---:|:---:|:---:|:---:|:---:|
+Value |0    |0    |0    |0    |0    |07   |
+Event |--   | --  | E3  |--   |--   |--   |
 
 ---
 
@@ -115,17 +115,17 @@ Consider these sample events.
 
 At the end of processig of Event `E2`. The array `A` would look like. The last index `5` containing the value of the timestamp of `E2`. 
 
-Bucket|0  |1  |  2|  3|  4|  5|
-------|---|---|---|---|---|---|
+Bucket|  0  |  1  |  2  |  3  |  4  |  5  |
+:----:|:---:|:---:|:---:|:---:|:---:|:---:|
 Value |1  |1  |0  |0  |0  |01 |
 Event |E1 |E2 |-- |-- |-- |-- |
 
 When the event `E3` is processed, since the last updated timestamp is 01, and the current timestamp is 04. We would have to ensure that the buckets bordering that rage i.e 3-4 are reset to indicate that there were no events generated during that time. Indicated by `R`. 
 
-Bucket|0  |1  |  2|  3|  4|  5|
-------|---|---|---|---|---|---|
-Value |1  |1  |0  |0  |1  |04 |
-Event |E1 |E2 |R  |R  |E4 |-- |
+Bucket|  0  |  1  |  2  |  3  |  4  |  5  |
+:----:|:---:|:---:|:---:|:---:|:---:|:---:|
+Value |1    |1    |0    |0    |1    |  04 |
+Event |E1   |E2   |R    |R    |E4   |  -- |
 
 A simulation of this can be found in a gist [here](https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4).
 
