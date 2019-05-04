@@ -73,8 +73,8 @@ Since we are only concerned about the events that happened in last 5 seconds, we
 
 Bucket|  0  |  1  |  2  |  3  |  4  |  5  |
 :----:|:---:|:---:|:---:|:---:|:---:|:---:|
-Value |1  |1  |1  |1  |1  |-  |
-Event |E6 |E2 |E3 |E4 |E5 |-  |
+Value |1    |1    |1    |1    |1    |-    |
+Event |E6   |E2   |E3   |E4   |E5   |-  |
 
 ---
 
@@ -99,7 +99,7 @@ When Event `E3` is processed, we check for the lastupdated timestamp. If differe
 
 Bucket|  0  |  1  |  2  |  3  |  4  |  5  |
 :----:|:---:|:---:|:---:|:---:|:---:|:---:|
-Value |0    |0    |0    |0    |0    |07   |
+Value |0    |0    |1    |0    |0    |07   |
 Event |--   | --  | E3  |--   |--   |--   |
 
 ---
@@ -130,8 +130,8 @@ Event |E1   |E2   |R    |R    |E4   |  -- |
 A simulation of a single instance of a sliding window of 10s can be found in this gist [here](https://gist.github.com/abkolan/d786e261752d2ae76faa11fcb1645aa4).
 
 ### Further Improvements
-* The map can be garbage collected if the last updated time is passed the interval. 
-* Lazy propagation can be used for the updates in the segment tree, so the updates are done only when the sum is to be computed. 
+* The map can be garbage collected if the last updated time is passed the interval, i.e There are values in the Array `A` that are not relevant to the computation. For Example: For an interval of 5m, we could garbage collect keys, for which we have not seen values for more than 5m. 
+* Lazy propagation can be used for the updates in the segment tree, so the updates are done only when the sum is to be computed. Propagation can be carried out at the end of the 1s, when the sum is computed. 
 
 ### Building and Running
 **Prerequisites**
