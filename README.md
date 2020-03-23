@@ -136,7 +136,7 @@ A simulation of a single instance of a sliding window of 10s can be found in thi
 ### Building and Running
 **Prerequisites**
  
-* JAVA on UNIX/Linux or Mac or Linux Substem for Windows<sup>*</sup>.
+* JAVA on UNIX/Linux or Mac or Linux Subsystem for Windows<sup>*</sup>.
 * bash + GNU Core Utilities for simulation.  
 
 
