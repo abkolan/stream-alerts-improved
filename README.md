@@ -1,16 +1,18 @@
 # stream-alerts-improved
 
-### Problem
+### The Problem
 Set off an alert, when a word occurs for more than X number of times in a sliding window of M minutes in a stream of text (like Tweets)
 
-### Assumptions
+### The Assumptions
 * Time at which the tweet is generated and the time at which the tweet is processed is the same. The difference between them is zero. 
 * This solution is running on a system that has has infinite resources (Not a distributed Systems problem)
-* No usage of any third party softwares whether open source or proprietary. (For example: Map-Reduce, Spark, Storm or Kafka QL.
+
+### The Constraints
+* No usage of any third party softwares whether open source or proprietary. (For example: Map-Reduce, Spark, Storm or Kafka QL)
+* No usage of any advance language features and classes.
 * No usage of any third party libraries.
 
-
-### Approach
+### The Approach
 
 ![](https://github.com/abkolan/stream-alerts-improved/blob/master/media/image.png?raw=true)
 
